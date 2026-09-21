@@ -1,0 +1,8 @@
+container_id,n_sessions,sessions,experiments,cre_line,imaging_depth
+650389885,3,"['three_session_B', 'three_session_C2', 'three_session_A']","[650389887, 652094901, 650512363]",Slc17a7-IRES2-Cre,175
+652842570,3,"['three_session_B', 'three_session_C2', 'three_session_A']","[652842572, 653053207, 652988777]",Slc17a7-IRES2-Cre,175
+653125128,3,"['three_session_B', 'three_session_C2', 'three_session_A']","[653125130, 653552163, 653923501]",Slc17a7-IRES2-Cre,175
+661437138,3,"['three_session_B', 'three_session_C2', 'three_session_A']","[661437140, 662351346, 662358233]",Slc17a7-IRES2-Cre,175
+661732156,3,"['three_session_B', 'three_session_C2', 'three_session_A']","[663485329, 662989044, 661753184]",Slc17a7-IRES2-Cre,175
+666589599,3,"['three_session_B', 'three_session_C2', 'three_session_A']","[667364442, 666589601, 667011230]",Slc17a7-IRES2-Cre,175
+680156909,3,"['three_session_B', 'three_session_C2', 'three_session_A']","[681673022, 680156911, 682054669]",Slc17a7-IRES2-Cre,175

@@ -1,0 +1,18 @@
+container_id,n_sessions,sessions,experiment_ids,cre_line,imaging_depth
+511507650,3,"['three_session_A', 'three_session_B', 'three_session_C']","[501794235, 500855614, 502115959]",Cux2-CreERT2,175
+511509529,3,"['three_session_A', 'three_session_B', 'three_session_C']","[500964514, 501337989, 501271265]",Cux2-CreERT2,175
+511510736,3,"['three_session_A', 'three_session_B', 'three_session_C']","[501559087, 501704220, 501474098]",Cux2-CreERT2,175
+688678764,3,"['three_session_C2', 'three_session_A', 'three_session_B']","[688678766, 690045763, 691763694]",Slc17a7-IRES2-Cre,205
+661732156,3,"['three_session_C2', 'three_session_A', 'three_session_B']","[663485329, 662989044, 661753184]",Slc17a7-IRES2-Cre,175
+682734790,3,"['three_session_C2', 'three_session_A', 'three_session_B']","[685494041, 682734792, 683257169]",Slc17a7-IRES2-Cre,205
+652842570,3,"['three_session_A', 'three_session_C2', 'three_session_B']","[652842572, 653053207, 652988777]",Slc17a7-IRES2-Cre,175
+680156909,3,"['three_session_C2', 'three_session_A', 'three_session_B']","[681673022, 680156911, 682054669]",Slc17a7-IRES2-Cre,175
+511510650,3,"['three_session_A', 'three_session_B', 'three_session_C']","[501836392, 501717543, 501886692]",Cux2-CreERT2,175
+653125128,3,"['three_session_A', 'three_session_C2', 'three_session_B']","[653125130, 653552163, 653923501]",Slc17a7-IRES2-Cre,175
+701412138,3,"['three_session_C2', 'three_session_A', 'three_session_B']","[704826374, 704298735, 705412356]",Cux2-CreERT2,175
+511510718,3,"['three_session_A', 'three_session_B', 'three_session_C']","[510345479, 510174759, 510514474]",Cux2-CreERT2,175
+650389885,3,"['three_session_A', 'three_session_C2', 'three_session_B']","[650389887, 652094901, 650512363]",Slc17a7-IRES2-Cre,175
+661437138,3,"['three_session_C2', 'three_session_A', 'three_session_B']","[661437140, 662351346, 662358233]",Slc17a7-IRES2-Cre,175
+666589599,3,"['three_session_A', 'three_session_C2', 'three_session_B']","[667364442, 666589601, 667011230]",Slc17a7-IRES2-Cre,175
+511510670,3,"['three_session_A', 'three_session_B', 'three_session_C']","[502205092, 504642019, 502368172]",Cux2-CreERT2,175
+511510855,3,"['three_session_A', 'three_session_B', 'three_session_C']","[510705057, 510517131, 509644421]",Cux2-CreERT2,175

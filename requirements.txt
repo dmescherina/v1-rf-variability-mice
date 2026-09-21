@@ -1,0 +1,14 @@
+# Core analysis
+numpy==1.26.4
+scipy==1.13.1
+pandas==2.2.2
+matplotlib==3.9.1
+scikit-learn==1.5.1
+seaborn==0.13.2
+
+# Allen Brain Observatory data access
+allensdk==2.16.2
+
+# Notebooks
+jupyterlab>=4.2
+ipykernel>=6.29
