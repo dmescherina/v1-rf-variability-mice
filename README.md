@@ -3,9 +3,9 @@
 Code and derived data for the paper:
 
 > Meshcherina, D., Auffarth, B., & Lindeberg, T. (2026). Variabilities in the shapes of the receptive fields of simple cells in mice*.
->[PLACEHOLDER] https://doi.org/XXXXXXXX
+> https://doi.org/10.5281/zenodo.22883098
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22883098.svg)](https://doi.org/10.5281/zenodo.22883098)
 
 ---
 
