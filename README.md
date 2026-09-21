@@ -2,9 +2,8 @@
 
 Code and derived data for the paper:
 
-> Meshcherina, D., Auffarth, B., & Lindeberg, T. (2026). *Variabilities in the shapes of
-> the receptive fields of simple cells in mice*. PLOS Computational Biology.
-> https://doi.org/XXXXXXXX
+> Meshcherina, D., Auffarth, B., & Lindeberg, T. (2026). *Ecological Constraints on Visual Transformation Dimensionality and the Emergence of Cortical Maps*.
+>[PLACEHOLDER] https://doi.org/XXXXXXXX
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
 
@@ -127,8 +126,7 @@ derived_data/
 
 ## Figure 1
 
-Figure 1 is a schematic overview produced by `fig01_overview.py` (not yet committed; see
-`outputs/figures/` for the current draft). All data figures (2–7) are produced by
+Figure 1 is a schematic overview. All data-driven figures (2–7) are produced by
 `notebooks/06_figures.ipynb`.
 
 ---
@@ -138,8 +136,8 @@ Figure 1 is a schematic overview produced by `fig01_overview.py` (not yet commit
 ```bibtex
 @article{meshcherina2026rf,
   author  = {Meshcherina, Daria and Auffarth, Ben and Lindeberg, Tony},
-  title   = {Variabilities in the shapes of the receptive fields of simple cells in mice},
-  journal = {PLOS Computational Biology},
+  title   = Ecological Constraints on Visual Transformation Dimensionality and the Emergence of Cortical Maps},
+  journal = {},
   year    = {2026},
   doi     = {XXXXXXXX}
 }
