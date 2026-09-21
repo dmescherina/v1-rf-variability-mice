@@ -1,4 +1,4 @@
-# Variabilities in the Shapes of the Receptive Fields of Simple Cells in Mice
+# Ecological Constraints on Visual Transformation Dimensionality and the Emergence of Cortical Maps
 
 Code and derived data for the paper:
 
