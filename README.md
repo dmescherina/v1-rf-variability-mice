@@ -3,15 +3,15 @@
 Code and derived data for the paper:
 
 > Meshcherina, D., Auffarth, B., & Lindeberg, T. (2026). Variabilities in the shapes of the receptive fields of simple cells in mice*.
-> https://doi.org/10.5281/zenodo.22883098
+> https://doi.org/10.5281/zenodo.22883097
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22883098.svg)](https://doi.org/10.5281/zenodo.22883098)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22883097.svg)](https://doi.org/10.5281/zenodo.22883097)
 
 ---
 
 ## What this repository contains
 
-This study characterises the spatial structure of receptive fields in mouse primary visual cortex (V1) using the Allen Brain Observatory Visual Coding 2-photon dataset. Receptive fields are reconstructed from locally sparse noise stimuli via ridge regression, then fitted with Gaussian-derivative models of orders m = 0, 1, and 2, following Lindeberg's (2021, 2024) scale-space framework. We identify 31 first-order (m = 1) simple cells from a population of 1,017 well-fitted neurons across 17 experiment containers, characterise their receptive field shapes, and compare the Gaussian-derivative description against Gabor fits. The analysis covers scale (σ), elongation (κ), and differentiation direction (φ) and tests whether these parameters show spatial organisation within the imaging plane.
+This study characterises the spatial structure of receptive fields in mouse primary visual cortex (V1) using the Allen Brain Observatory Visual Coding 2-photon dataset. Receptive fields are reconstructed from locally sparse noise stimuli via ridge regression, then fitted with Gaussian-derivative models of orders m = 0, 1, and 2, following Lindeberg's (2021, 2025b) scale-space framework. We identify 31 first-order (m = 1) simple cells from a population of 1,017 well-fitted neurons across 17 experiment containers, characterise their receptive field shapes, and compare the Gaussian-derivative description against Gabor fits. The analysis covers scale (σ), elongation (κ), and differentiation direction (φ) and tests (i) the variabilities of these receptive field parameters, and (ii) whether these parameters show a spatial organisation within the imaging plane.
 
 This repository contains:
 
@@ -136,17 +136,25 @@ Figure 1 is a schematic overview. All data-driven figures (2–7) are produced b
 ```bibtex
 @article{meshcherina2026rf,
   author  = {Meshcherina, Daria and Auffarth, Ben and Lindeberg, Tony},
-  title   = Ecological Constraints on Visual Transformation Dimensionality and the Emergence of Cortical Maps},
+  title   = Variabilities in the shapes of the receptive fields of simple cells in mice},
   journal = {},
   year    = {2026},
   doi     = {XXXXXXXX}
 }
 ```
 
-**Zenodo archive** (code + derived data): https://doi.org/10.5281/zenodo.XXXXXXX
+## References
+
+Lindeberg, T. (2021) "Normative theory of visual receptive fields". *Heliyon*, 7(1):e05897:1–20, 2021. doi: 10.1016/j.heliyon.2021.e05897.
+
+Lindeberg, T. (2025a) "Do the receptive fields in the primary visual cortex span a variability over the degree of elongation of the receptive fields?", *Journal of Computational Neuroscience*, 53(3):397–417.
+
+Lindeberg, T. (2025b) "On sources to variabilities of simple cells in the primary visual cortex: A principled theory for the interaction between geometric image transformations and receptive field responses", *arXiv preprint* arXiv:2509.02139.
+
+**Zenodo archive** (code + derived data): https://doi.org/10.5281/zenodo.22883097
 
 ---
 
 ## Licence
 
-MIT — see [LICENSE](LICENSE).
+Creative Commons Attribution 4.0 International — see [LICENSE](LICENSE).
