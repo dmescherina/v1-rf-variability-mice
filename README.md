@@ -158,3 +158,5 @@ Lindeberg, T. (2025b) "On sources to variabilities of simple cells in the primar
 ## Licence
 
 Creative Commons Attribution 4.0 International — see [LICENSE](LICENSE).
+
+Attribution. This work is licensed under CC BY 4.0. If you use or adapt it, please attribute it by citing our paper: the bioRxiv preprint once posted (Meshcherina, Auffarth & Lindeberg, Variabilities in the shapes of the receptive fields of simple cells in mice, bioRxiv, forthcoming; DOI to follow), and the peer-reviewed version once published. Until the preprint is available, please cite the Zenodo archive, doi:10.5281/zenodo.22883097.
