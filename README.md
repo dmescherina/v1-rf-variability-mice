@@ -56,7 +56,8 @@ Run in order:
 | Notebook | Produces |
 |----------|----------|
 | `05_population_stats.ipynb` | Key statistics reported in the paper |
-| `06_figures.ipynb` | `outputs/figures/fig02_*` … `fig07_*` |
+| `08_noise_floor.ipynb` | noise-floor control study: re-embeds round and observed-geometry receptive fields in each cell's own signal-free-lag noise, refits with the unchanged pipeline, and produces per-cell bootstrap intervals, the population noise-floor test, the cross-noise control, the fitted-model orientation estimates, and the reprinted S1 gallery |
+| `06_figures.ipynb` | `outputs/figures/fig02_*` … `fig07_*`, `s4_fig_coupling.*` (run after `08_noise_floor.ipynb`) |
 | `07_supplementary_pdf.ipynb` | `derived_data/m1_cells/supplementary_rf_gallery_m1_31.pdf` |
 
 ### Full pipeline (from raw Allen data)
@@ -102,7 +103,8 @@ derived_data/
 ├── m1_cells/
 │   ├── m1_neuron_dataset.pkl                   # 31 verified m=1 simple cells (RF maps + params)
 │   ├── m1_neuron_dataset.csv                   # same, tabular
-│   └── gabor_vs_gd_m1_31_v3.csv               # Gabor vs Gaussian-derivative comparison
+│   ├── gabor_vs_gd_m1_31_v3.csv               # Gabor vs Gaussian-derivative comparison
+│   └── S3_per_cell_table.csv                   # per-cell kappa_dir/phi bootstrap intervals (notebook 08)
 └── review_judgements/                          # manual verification records (input to notebook 02)
 ```
 
@@ -118,7 +120,7 @@ derived_data/
 | `sigma` | Geometric-mean receptive field scale (degrees) |
 | `kappa` | Elongation, σ_major / σ_minor ≥ 1 |
 | `theta` | Envelope orientation, major axis angle (degrees, [0°, 180°)) |
-| `phi` | Differentiation direction from lobe geometry (degrees, [0°, 360°) for m=1) |
+| `phi` | Differentiation direction from lobe geometry (degrees, [0°, 360°) for m=1). For the 31 verified m=1 cells, the published orientation is the fitted-model differentiation direction from `08_noise_floor.ipynb` (`derived_data/m1_cells/S3_per_cell_table.csv`); this lobe-moment `phi` is retained here only as a legacy column. |
 | `theta_hybrid` | φ for m=1, θ for m=0 (recommended orientation column) |
 | `r_squared` | Goodness of fit of the selected model |
 | `cortex_x_um`, `cortex_y_um` | ROI centroid position within the imaging plane (µm) |

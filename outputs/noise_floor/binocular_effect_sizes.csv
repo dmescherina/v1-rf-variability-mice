@@ -1,0 +1,3 @@
+measure,p_mannwhitney,rank_biserial,ci_lo,ci_hi
+sigma,0.1672,-0.2991,-0.6923,0.1026
+kappa_dir,0.6742,-0.094,-0.5045,0.3333
