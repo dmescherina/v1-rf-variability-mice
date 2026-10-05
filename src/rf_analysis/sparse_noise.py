@@ -1350,3 +1350,92 @@ def classify_rf_order(rf_on, rf_off, pixel_size_deg=4.65, smooth_sigma=0.75,
         best_params['theta_hybrid'] = best_params['theta']
 
     return best_order, best_params, best_quality, all_results
+
+
+# ===========================================================================
+# Full spatiotemporal RF, canonical (order_full_v2) lineage
+# ===========================================================================
+
+def batch_reconstruct_strf(dataset, requested_ids,
+                           n_lags=8, response_delay=4, response_window=5):
+    """Ridge STRFs for several cells of one experiment, canonical lineage.
+
+    Parameters
+    ----------
+    dataset : allensdk OphysExperimentData
+    requested_ids : iterable of int
+        Cell specimen IDs.  Intersected with the experiment's own cell list
+        and processed in experiment-native order (AllenSDK requirement).
+    n_lags, response_delay, response_window : int
+        As in ``reconstruct_rf``; defaults are the pipeline values.
+
+    Returns
+    -------
+    dict
+        cell_id -> {'strf': (n_lags, grid_h, grid_w) ndarray,
+                    'best_lag': int, 'ridge_lambda': float,
+                    'pixel_size_deg': float}
+        ``strf[best_lag]`` reproduces the stored rf_raw for the 31 verified
+        m=1 cells (same RidgeCV(cv=None, alpha_per_target=True) lineage).
+    """
+    exp_cells = list(dataset.get_cell_specimen_ids())
+    req_set   = set(int(c) for c in requested_ids)
+    valid_ids = [c for c in exp_cells if c in req_set]
+    if not valid_ids:
+        raise ValueError('No requested cell_ids found in experiment.')
+
+    stim_name = next((s for s in dataset.list_stimuli() if 'sparse_noise' in s), None)
+    if stim_name is None:
+        raise ValueError('No sparse noise stimulus.')
+
+    stim_table = dataset.get_stimulus_table(stim_name)
+    tr         = dataset.get_locally_sparse_noise_stimulus_template(stimulus=stim_name)
+    template   = tr[0] if isinstance(tr, tuple) else tr
+    n_tf, grid_h, grid_w = template.shape
+    on_val, off_val = int(template.max()), int(template.min())
+    pix_size        = _pixel_size(stim_name)
+
+    starts        = stim_table['start'].values.astype(int)
+    frame_indices = stim_table['frame'].values.astype(int)
+
+    _, all_dff = dataset.get_dff_traces(cell_specimen_ids=valid_ids)
+    n_cells, n_tp = all_dff.shape
+
+    X = _build_design_matrix(template, frame_indices, on_val, off_val,
+                              grid_h, grid_w, n_lags)
+
+    win_idx  = (starts + response_delay)[:, None] + np.arange(response_window)
+    in_bnds  = (win_idx >= 0) & (win_idx < n_tp)
+    win_safe = np.clip(win_idx, 0, n_tp - 1)
+    dff_wins = all_dff[:, win_safe]
+    dff_wins[:, ~in_bnds] = np.nan
+    Y = np.nanmean(dff_wins, axis=2).T
+    Y = np.where(np.isnan(Y), 0.0, Y).astype(np.float64)
+
+    frame_valid  = (frame_indices >= 0) & (frame_indices < n_tf)
+    X_fit, Y_fit = X[frame_valid].astype(np.float64), Y[frame_valid]
+    if X_fit.shape[0] < 20:
+        raise ValueError('Too few valid presentations.')
+
+    try:
+        rcv = RidgeCV(alphas=_LAMBDA_GRID, cv=None,
+                      fit_intercept=True, alpha_per_target=True)
+        rcv.fit(X_fit, Y_fit)
+        W      = np.atleast_2d(rcv.coef_)
+        alphas = np.broadcast_to(np.atleast_1d(rcv.alpha_), (len(valid_ids),))
+    except TypeError:
+        rcv = RidgeCV(alphas=_LAMBDA_GRID, cv=None, fit_intercept=True)
+        rcv.fit(X_fit, Y_fit.mean(axis=1, keepdims=True))
+        r = Ridge(alpha=float(rcv.alpha_), fit_intercept=True)
+        r.fit(X_fit, Y_fit)
+        W      = np.atleast_2d(r.coef_)
+        alphas = np.full(len(valid_ids), float(rcv.alpha_))
+
+    out = {}
+    for i, cid in enumerate(valid_ids):
+        strf     = W[i].reshape(n_lags, grid_h, grid_w)
+        best_lag = int(np.argmax([np.abs(strf[l]).max() for l in range(n_lags)]))
+        out[cid] = {'strf': strf, 'best_lag': best_lag,
+                    'ridge_lambda': float(alphas[i]),
+                    'pixel_size_deg': pix_size}
+    return out
