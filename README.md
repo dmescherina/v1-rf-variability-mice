@@ -153,6 +153,10 @@ Lindeberg, T. (2025a) "Do the receptive fields in the primary visual cortex span
 
 Lindeberg, T. (2025b) "On sources to variabilities of simple cells in the primary visual cortex: A principled theory for the interaction between geometric image transformations and receptive field responses", *arXiv preprint* arXiv:2509.02139.
 
+de Vries, S.E.J., Lecoq, J.A., Buice, M.A., et al. (2020). A large-scale standardized physiological survey reveals functional organization of the mouse visual cortex. Nature Neuroscience, 23, 138–151. doi:10.1038/s41593-019-0550-9
+
+Allen Institute MindScope Program (2016). Allen Brain Observatory – 2-photon Visual Coding [dataset]. Available from brain-map.org.
+
 **Zenodo archive** (code + derived data): https://doi.org/10.5281/zenodo.22883097
 
 ---
