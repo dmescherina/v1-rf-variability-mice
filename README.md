@@ -138,7 +138,7 @@ Figure 1 is a schematic overview. All data-driven figures (2–7) are produced b
 ```bibtex
 @article{meshcherina2026rf,
   author  = {Meshcherina, Daria and Auffarth, Ben and Lindeberg, Tony},
-  title   = Variabilities in the shapes of the receptive fields of simple cells in mice},
+  title   = {Variabilities in the shapes of the receptive fields of simple cells in mice},
   journal = {},
   year    = {2026},
   doi     = {XXXXXXXX}
